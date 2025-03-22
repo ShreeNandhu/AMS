@@ -1,0 +1,146 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 70px;
+  }
+  
+  .title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Alert Box */
+  .alert {
+    background: rgba(255, 77, 77, 0.1);
+    color: #ff4d4d;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: fit-content;
+    margin: 10px auto;
+  }
+  
+  /* Table Container */
+  .booking-table-container {
+    width: 100%;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table Header */
+  .table-header {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background: #155b89;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 3px solid #0e4b70;
+  }
+  
+  /* Table Row */
+  .table-row {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    padding: 12px;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+  }
+  
+  .table-row:nth-child(even) {
+    background: #f4f6f8;
+  }
+  
+  .table-row:hover {
+    background: #e3eaf0;
+  }
+  
+  /* Status Styles */
+  .status {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  
+  .confirmed {
+    color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+  }
+  
+  .pending {
+    color: #e0a800;
+    background: rgba(224, 168, 0, 0.1);
+  }
+  
+  .cancelled {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+  }
+  
+  .paid {
+    color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+  }
+  
+  .unpaid {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+  }
+  
+  /* Buttons */
+  .delete-btn,
+  .pay-btn,
+  .paid-btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 13px;
+  }
+  
+  .delete-btn {
+    background: #ff4d4d;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background: #e63939;
+    transform: scale(1.05);
+  }
+  
+  .pay-btn {
+    background: #007bff;
+    color: white;
+  }
+  
+  .pay-btn:hover {
+    background: #0062cc;
+    transform: scale(1.05);
+  }
+  
+  .paid-btn {
+    background: #ccc;
+    color: black;
+    cursor: not-allowed;
+  }
+  

@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    margin:0 auto;
+    background-color: #c7d4ee;
+    min-height: 100vh;
+    max-width: 800px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .seat-layout {
+    display: flex;
+    justify-content: center; /* Centers the partitions */
+    width: 100%; /* Makes the layout full width */
+    gap: 30px; /* Space between partitions */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .partition {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per partition, auto adjust */
+    grid-template-rows: auto;
+    gap: 10px;
+    flex: 1; /* Makes each partition expand */
+    justify-items: center;
+    align-items: center;
+  }
+  
+  p {
+    font-weight: bolder;
+  }
+  
+  .seat {
+    width: 100%;
+    max-width: 70px; /* Adjust the max size of seats */
+    height: 50px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #e5e7eb;
+  }
+  
+  .selected {
+    background-color: #10b981;
+    color: white;
+    border-color: #047857;
+  }
+  
+  .selected-info {
+    margin-top: 15px;
+    font-size: 1rem;
+  }
+  
+  .booked {
+    background-color: #dc2626 !important; /* Red color for booked seats */
+    color: white;
+    border-color: #991b1b;
+    cursor: not-allowed;
+  }

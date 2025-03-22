@@ -1,0 +1,7 @@
+// Alert and Icons Package
+npm install @fortawesome/angular-fontawesome @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
+npm install sweetalert2
+
+// Database
+INSERT INTO user (name, email, password, address, phoneNumber, role) 
+VALUES ('Admin User', 'admin@example.com','admin123', '123 Admin St', '9876543210', 'admin');

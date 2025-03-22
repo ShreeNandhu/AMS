@@ -1,0 +1,51 @@
+<div class="present-flights">
+  <h2>Your Flight Details</h2>
+  <div class="flight-cards">
+    <div class="flight-card" *ngIf="flights">
+      <div class="top">
+        <div class="airline">
+          <h3>{{ flights.airline }}</h3> <!-- Airline Name Big -->
+        </div>
+
+        <div class="timing">
+          <p>{{ flights.arrivalTime | date: 'short' }}</p>
+          <p> - </p>
+          <p>{{ flights.departureTime | date: 'short' }}</p>
+        </div>
+
+        <div class="price">
+          <p><strong>Price:</strong> {{ flights.price | currency: 'INR' }}</p>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="place">
+          <p>{{ flights.source }}</p>
+          <p> - </p>
+          <p>{{ flights.destination }}</p>
+        </div>
+
+        <div class="seats">
+          <p><strong>Available Seats:</strong> {{ flights.availableSeats }}</p>
+  
+        </div>
+
+      </div>
+
+
+      <div class="inputBox">
+        <div *ngIf="userEmail && userMobile">
+          <h3>Passenger Details</h3>
+          <p><strong>Username:</strong> {{ userName }}</p>
+          <p><strong>Email:</strong> {{ userEmail }}</p>
+          <p><strong>Mobile:</strong> {{ userMobile }}</p>
+          <app-seat-booking [availableSeats]="flights.availableSeats " [bookedSeats]="flights.bookedSeats" (seatSelected)="onSeatSelected($event)" ></app-seat-booking>
+        </div>
+        
+      </div>
+      <div class="btn-group">
+        <button class="book-btn" (click)="confirmBooking()">Make Payment</button>
+      </div>
+    </div>
+  </div> <!-- ✅ Closing div for .flight-cards -->
+</div> <!-- ✅ Closing div for .present-flights -->

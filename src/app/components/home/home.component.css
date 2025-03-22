@@ -1,0 +1,58 @@
+.intro{
+    background-image: url('../../assets/flight.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    display: flex;
+    height: 100vh;
+}
+img {
+    filter: contrast(60%) brightness(90%) grayscale(10%);
+}
+
+.container {
+    text-align: center;
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+}
+
+h1{
+    font-size: 80px;
+    color: aliceblue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.about {
+    display: flex;
+    font-size: 18px;
+    color: #051d22;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #007bff; 
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.btn:active {
+    transform: scale(0.98); /* Press effect */
+}

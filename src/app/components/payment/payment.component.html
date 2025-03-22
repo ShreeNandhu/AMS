@@ -1,0 +1,25 @@
+<div class="container">
+    <h3>Complete Your Payment</h3>
+  
+    <div class="payment-container">
+      <h2>Payment</h2>
+  
+      <label for="paymentMethod">Select Payment Method:</label>
+      <select id="paymentMethod" [(ngModel)]="paymentMethod">
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="UPI">UPI</option>
+        <option value="Net Banking">Net Banking</option>
+      </select>
+  
+      
+      <div *ngIf="flightAmount !== null" class="flight-amount">
+        <label >Enter Amount (₹):</label>
+        <p><strong>Flight Amount:</strong> ₹{{ flightAmount }}</p>
+      </div>
+      
+  
+      <button class="btn btn-primary w-100 mt-3" (click)="processPayment()">Pay</button>
+    </div>
+  </div>
+  

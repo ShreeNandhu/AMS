@@ -1,0 +1,185 @@
+
+.box {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.flight-search {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    height: 200px;
+    margin-bottom: 0;
+    max-width: fit-content;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+   
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 0.5px solid;
+    border-color: #ccc;
+    border-radius: 10px;
+    padding: 20px;
+}
+select, input {
+    padding: 8px;
+    border-radius: 4px;
+    width: 150px;
+    border: none;
+    color: linear-gradient(to right, #00274D, #0057A3);
+}
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+.dropdown {
+    position: relative;
+    border: none;
+}
+.dropdown select {
+    cursor: pointer;
+}
+.searchbtn {
+    position:absolute;
+    padding: 15px 20px;
+    background: linear-gradient(to right, #4598eb, #1360a4);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: medium;
+}
+.buttonbox{
+    margin-top: 280px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+
+}
+.searchbtn:hover {
+    background: #0056b3;
+}
+
+.present-flights {
+    text-align: center;
+    padding: 20px;
+  }
+  .present-flights h2{
+    margin-top: 0;
+    color: white;
+    font-size: 70px;
+  }
+  
+  .flight-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .flight-card {
+    width: 1200px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+  
+  .flight-card:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Top Section */
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    border-bottom: 2px solid #ddd;
+    margin: 0;
+  }
+  
+  .airline h3 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #a71010;
+  }
+  
+  .timing {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-left: 80px;
+    /* Centering the time */
+  }
+  
+  .price {
+    font-size: 28px;
+    /* Price BIG like Airline */
+    font-weight: bold;
+    color: green;
+    text-align: right;
+  }
+  
+  /* Bottom Section */
+  .bottom {
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+  .place {
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  
+  .seats {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff5733;
+    /* Seats in orange */
+    text-align: right;
+  }
+  
+  /* Buttons */
+  .btn-group {
+    justify-content: right;
+    gap: 20px;
+    margin-top: 15px;
+  }
+  
+  .book-btn {
+    padding: 15px 20px;
+    background: linear-gradient(to right, #4598eb, #1360a4);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: medium;
+  }
+  
+  
+  .book-btn:hover {
+    background: linear-gradient(to right, #1884f0, #5fb4ff);
+  }
+  
+ 
+  

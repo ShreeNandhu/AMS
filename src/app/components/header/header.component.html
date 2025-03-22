@@ -1,0 +1,33 @@
+<header class="header">
+    <div class="logo">SkyHigh Airline</div>
+    <nav class="nav">
+        <ul>
+            <li ><a routerLink="/">Home</a></li>
+            <li *ngIf="!authService.isLoggedIn()"><a routerLink="/register">Register</a></li>
+            <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login">Login</a></li>
+
+            <!-- User Role -->
+            <li *ngIf="authService.isLoggedIn() && getRole() === 'user'">
+                <a routerLink="/search-flights">Search Flight</a>
+            </li>
+            <li *ngIf="authService.isLoggedIn() && getRole() === 'user'">
+                <a routerLink="/booking-history">Booking History</a>
+            </li>
+            <li *ngIf="authService.isLoggedIn() && getRole() === 'user'">
+                <a routerLink="/profile">Profile</a>
+            </li>
+
+            <!-- Admin Role -->
+            <li *ngIf="authService.isLoggedIn() && getRole() === 'admin'">
+                <a routerLink="/manage-flights">Manage Flights</a>
+            </li>
+            <li *ngIf="authService.isLoggedIn() && getRole() === 'admin'">
+                <a routerLink="/bookingList">Manage Booking</a>
+            </li>
+
+            <li *ngIf="authService.isLoggedIn() && getRole() === 'admin'">
+                <a (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</header>

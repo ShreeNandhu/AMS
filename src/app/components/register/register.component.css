@@ -1,0 +1,72 @@
+.outer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+
+.container {
+    margin: 90px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 98%;
+    position: relative;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+/* Input Fields */
+input,
+textarea {
+    width: 97%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+input:focus,
+textarea:focus {
+    border-color: #2881a7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 129, 167, 0.3);
+}
+div[style="color: red;"] {
+    margin-top: 5px;
+    font-size: 14px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: #2881a7;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0a4d69;
+}

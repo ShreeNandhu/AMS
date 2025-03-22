@@ -1,0 +1,47 @@
+<div class="container">
+  <h2 class="title">All Bookings</h2>
+
+  <!-- No bookings available message -->
+  <div *ngIf="bookings.length === 0" class="alert">
+    <strong>No bookings available.</strong>
+  </div>
+
+  <!-- Table Header -->
+  <div *ngIf="bookings.length > 0" class="booking-table-container">
+    <div class="table-header">
+      <div>Booking ID</div>
+      <div>Flight ID</div>
+      <div>User ID</div>
+      <div>Seat</div>
+      <div>Status</div>
+      <div>Payment</div>
+      <div>Date</div>
+      <div>Action</div>
+    </div>
+
+    <!-- Table Body (Booking Items) -->
+    <div *ngFor="let booking of bookings" class="table-row">
+      <div>{{ booking.id }}</div>
+      <div>{{ booking.flight.id }}</div>
+      <div>{{ booking.userId }}</div>
+      <div>{{ booking.seatNumber }}</div>
+      <div>
+        <span class="status" [ngClass]="{
+          'confirmed': booking.bookingStatus === 'CONFIRMED',
+          'pending': booking.bookingStatus === 'PENDING',
+          'cancelled': booking.bookingStatus === 'CANCELLED'
+        }">{{ booking.bookingStatus }}</span>
+      </div>
+      <div>
+        <span class="status" [ngClass]="{
+          'paid': booking.paymentStatus === 'PAID',
+          'unpaid': booking.paymentStatus === 'PENDING'
+        }">{{ booking.paymentStatus }}</span>
+      </div>
+      <div>{{ booking.bookingDate | date: 'dd-MM-yyyy' }}</div>
+      <div>
+        <button class="delete-btn" (click)="cancelBooking(booking.id)">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

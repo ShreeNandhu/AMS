@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.profile-container {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  h2 {
+    font-size: 100px;
+    color: white;
+  }
+  
+  p {
+    font-size: 20px;
+    color: #000000;
+    margin: 5px;
+  }
+  .boxContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centers buttons */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+  }
+  
+  button {
+    flex: 1; /* Ensures buttons have equal width */
+    padding: 12px 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background: #3cd17d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #2cbe90;
+  }
+  
+  .delete-btn {
+    background: #dc3545;
+  }
+  
+  .delete-btn:hover {
+    background: #c82333;
+  }
+  .logout-btn {
+    background: #dc3535;
+  }
+  
+  .logout-btn:hover {
+    background: #c82333;
+  }
+  
+  /* Modal Background */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Content Box */
+  .modal-content {
+    background: #fff;
+    padding: 25px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Modal Heading */
+  .modal-content h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  /* Input Fields */
+  .modal-content input {
+    width: 95%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Buttons */
+  .modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .modal-content button:hover {
+    background: #0056b3;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    background: #dc3545 !important;
+  }
+  
+  .close-btn:hover {
+    background: #a71d2a !important;
+  }

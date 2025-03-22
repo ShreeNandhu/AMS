@@ -1,0 +1,67 @@
+<div class="outer">
+    <div class="container">
+        <h2>User Registration</h2>
+        <form (submit)="registerUser()">
+
+            <!-- Name Input -->
+            <div class="input-group">
+                <label>Name:</label>
+                <input type="text" [(ngModel)]="user.name" name="name" required>
+                <div *ngIf="errors?.name" style="color: red;">{{ errors.name }}</div>
+            </div>
+
+            <!-- Email Input -->
+            <div class="input-group">
+                <label>Email:</label>
+                <input type="email" [(ngModel)]="user.email" name="email" required>
+                <div *ngIf="errors?.email" style="color: red;">{{ errors.email }}</div>
+            </div>
+
+            <!-- Address Input -->
+            <div class="input-group">
+                <label>Address:</label>
+                <textarea name="address" rows="3" [(ngModel)]="user.address" required></textarea>
+            </div>
+
+            <!-- Password Input with Eye Icon -->
+            <div class="input-group">
+                <label>Password:</label>
+                <div style="position: relative;">
+                    <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="Password" name="password"
+                        required minlength="6" style="width: 92%; padding-right: 40px;">
+                    <fa-icon [icon]="showPassword ? faEyeSlash : faEye" (click)="togglePasswordVisibility()"
+                        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                    </fa-icon>
+                </div>
+                
+            </div>
+
+            <!-- Confirm Password Input with Eye Icon -->
+            <div class="input-group">
+                <label>Confirm Password:</label>
+                <div style="position: relative;">
+                    <input [type]="showConfirmPassword ? 'text' : 'password'" [(ngModel)]="user.password"
+                        name="confirmPassword" required minlength="6" style="width: 92%; padding-right: 40px;">
+                    <fa-icon [icon]="showConfirmPassword ? faEyeSlash : faEye" (click)="toggleConfirmPasswordVisibility()"
+                        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                    </fa-icon>
+                </div>
+                <div *ngIf="errors?.password" style="color: red;">{{ errors.password }}</div>
+                <div *ngIf="passwordMismatch" style="color: red;">
+                    Passwords do not match!
+                </div>
+            </div>
+
+    
+
+            <!-- Mobile Number Input -->
+            <div class="input-group">
+                <label>Mobile Number:</label>
+                <input type="tel" [(ngModel)]="user.phoneNumber" name="mobile" pattern="[0-9]{10}" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" [disabled]="passwordMismatch">Register</button>
+        </form>
+    </div>
+</div>

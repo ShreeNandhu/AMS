@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="flight-form-container">
+    <h2>Flight Management</h2>
+    <form (submit)="submitFlight()">
+      <div class="input-group">
+        <label>Airline Name</label>
+        <input type="text" id="airline" [(ngModel)]="flight.airline" name="airline" required />
+      </div>
+
+      <div class="input-group">
+        <label for="source">Source</label>
+        <input type="text" id="source" [(ngModel)]="flight.source" name="source" required />
+      </div>
+
+      <div class="input-group">
+        <label for="destination">Destination</label>
+        <input type="text" id="destination" [(ngModel)]="flight.destination" name="destination" required />
+      </div>
+
+      <div class="input-group">
+        <label for="arrival">Arrival Time</label>
+        <input type="datetime-local" id="arrival" [(ngModel)]="flight.arrivalTime" name="arrivalTime" required />
+      </div>
+      <div class="input-group">
+        <label for="departure">Departure Time</label>
+        <input type="datetime-local" id="departure" [(ngModel)]="flight.departureTime" name="departureTime" required />
+      </div>
+
+      <div class="input-group">
+        <label for="price">Price (₹)</label>
+        <input type="number" id="price" [(ngModel)]="flight.price" name="price" required />
+      </div>
+
+      <div class="input-group">
+        <label for="seats">Total Seats</label>
+        <input type="number" id="seats" [(ngModel)]="flight.totalSeats" name="totalSeats" required />
+      </div>
+      <div class="button">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="present-flights">
+    <h2>Available Flights</h2>
+    <div class="flight-cards">
+      <div class="flight-card" *ngFor="let flight of fetchflights; let i = index">
+        <div class="top">
+          <div class="airline">
+            <h3>{{ flight.airline }}</h3> <!-- Airline Name Big -->
+          </div>
+
+          <div class="timing">
+            <p>{{ flight.arrivalTime | date: 'short' }} </p>
+            <p> - </p>
+            <p> {{ flight.departureTime | date: 'short' }} </p>
+          </div>
+          
+
+          <div class="price">
+            <p><strong>Price:</strong> {{ flight.price | currency: 'INR' }}</p>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div class="place">
+            <p>{{ flight.source }}</p>
+            <p> - </p>
+            <p> {{ flight.destination }}</p>
+          </div>
+          
+          <div class="seats">
+            <p><strong>Total Seats:</strong> {{ flight.totalSeats }}</p>
+            <p><strong>Available Seats:</strong> {{ flight.availableSeats }}</p>
+            <p><strong>Booked Seats:</strong> {{ flight.bookedSeats }}</p>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button class="update-btn" (click)="openModal(flight, i)">Update</button>
+          <button class="delete-btn" (click)="deleteFlight(flight.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal (Hidden Initially) -->
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Update Flight Details</h2>
+    
+    <label>Airline:</label>
+    <input type="text" [(ngModel)]="selectedFlight.airline">
+  <br/>
+    <label>Arrival Time:</label>
+    <input type="datetime-local" [(ngModel)]="selectedFlight.arrivalTime">
+    <br/>
+    <label>Departure Time:</label>
+    <input type="datetime-local" [(ngModel)]="selectedFlight.departureTime">
+    <br/>
+    <label>Price:</label>
+    <input type="number" [(ngModel)]="selectedFlight.price">
+    <br/>
+    <label>Source:</label>
+    <input type="text" [(ngModel)]="selectedFlight.source">
+    <br/>
+    <label>Destination:</label>
+    <input type="text" [(ngModel)]="selectedFlight.destination">
+    <br/>
+    <label>Total Seats:</label>
+    <input type="number" [(ngModel)]="selectedFlight.totalSeats">
+    <br/>
+    <button class="save-btn" (click)="updateFlight()">Save</button>
+    <button class="cancel-btn" (click)="closeModal()">Cancel</button>
+  </div>
+</div>

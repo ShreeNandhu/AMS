@@ -1,0 +1,47 @@
+<div class="profile-container">
+  <h2>{{ userName }}</h2> <!-- Display Username in Big Size -->
+  <p>Email: {{ user.email }}</p>
+  <p>Phone: {{ user.phoneNumber }}</p>
+
+  <div class="boxContainer">
+      <button (click)="openUpdateEmailModal()">Update Email</button>
+      <button (click)="openUpdatePasswordModal()">Change Password</button> <!-- Corrected function -->
+      <button class="delete-btn" (click)="deleteAccount()">Delete Account</button>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</div>
+
+<!-- Update Email Modal -->
+<div class="modal" *ngIf="showEmailModal">
+  <div class="modal-content">
+      <h3>Update Email</h3>
+      <form (submit)="updateEmail()">
+          <label>Old Email:</label>
+          <input type="email" [value]="user.email" disabled />
+
+          <label>New Email:</label>
+          <input type="email" [(ngModel)]="newEmail" name="newEmail" placeholder="Enter new email" required />
+
+          <button type="submit">Update</button>
+          <button type="button" class="close-btn" (click)="closeModals()">Close</button>
+      </form>
+  </div>
+</div>
+
+<!-- Change Password Modal -->
+<div class="modal" *ngIf="showPasswordModal">
+  <div class="modal-content">
+      <h3>Change Password</h3>
+      <form (submit)="updatePassword()">
+          <label>New Password:</label>
+          <div style="position: relative;">
+          <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="newPassword" name="newPassword" placeholder="Enter new password" required />
+          <fa-icon [icon]="showPassword ? faEyeSlash : faEye" (click)="togglePasswordVisibility()"
+            style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+          </fa-icon>
+           </div>
+          <button type="submit">Update</button>
+          <button type="button" class="close-btn" (click)="closeModals()">Close</button>
+      </form>
+  </div>
+</div>

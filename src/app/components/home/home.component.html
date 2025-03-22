@@ -1,0 +1,14 @@
+<div class="intro">
+    <div class="container">
+        <h1>Welcome, <span id="username">{{ username }}</span>!</h1>
+        <div class="about">
+            <p>
+                Explore and book flights easily with our Airline Management System.
+                Find the best deals, choose your preferred seats, and manage your bookings seamlessly.
+            </p>
+        </div>
+        <div *ngIf="authService.isLoggedIn() && getRole() === 'user'"><button class="btn"
+                (click)="navigateToSearch()">Search Flights</button></div>
+
+    </div>
+</div>

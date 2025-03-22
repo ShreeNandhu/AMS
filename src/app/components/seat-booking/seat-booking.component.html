@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Seat Booking</h2>
+    <div class="seat-layout">
+      <div class="partition" *ngFor="let partition of seatPartitions">
+        <button *ngFor="let seat of partition"
+                [ngClass]="{
+                    'selected': selectedSeat === seat.id,
+                    'booked': seat.isBooked
+                  }"
+                class="seat"
+                (click)="selectSeat(seat.id)">
+          {{ seat.label }}
+        </button>
+      </div>
+    </div>
+    <div class="selected-info">
+      <p>Selected Seat: {{ selectedSeat !== null ? selectedSeat  : 'None' }}</p>
+    </div>
+  </div>
+  

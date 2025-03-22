@@ -1,0 +1,74 @@
+<div class="outer">
+    <div class="box">
+      <div class="flight-search">
+        <!-- From -->
+        <div class="form-group">
+          <label for="departure">Source</label>
+          <select id="departure" [(ngModel)]="selectedSource" required>
+            <option value="">Select City</option>
+            <option *ngFor="let source of sources" [value]="source">{{ source }}</option>
+          </select>
+        </div>
+  
+        <!-- To -->
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <select id="destination" [(ngModel)]="selectedDestination" required>
+            <option value="">Select City</option>
+            <option *ngFor="let destination of destinations" [value]="destination">{{ destination }}</option>
+          </select>
+        </div>
+  
+        <!-- Date Picker -->
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" [(ngModel)]="selectedDate" required>
+        </div>
+      </div>
+  
+      <div class="buttonbox">
+        <!-- Search Button -->
+        <button class="searchbtn" (click)="searchFlights()">Search Flights</button>
+      </div>
+    </div>
+  
+    <div class="present-flights" *ngIf="flights.length > 0">
+      <h2>Flights</h2>
+      <div class="flight-cards">
+        <div class="flight-card" *ngFor="let flight of flights; let i = index">
+          <div class="top">
+            <div class="airline">
+              <h3>{{ flight.airline }}</h3> <!-- Airline Name -->
+            </div>
+  
+            <div class="timing">
+              <p>{{ flight.arrivalTime | date : 'short' }}</p>
+              <p> - </p>
+              <p> {{ flight.departureTime | date : 'short'}}</p>
+            </div>
+  
+            <div class="price">
+              <p><strong>Price:</strong> {{ flight.price | currency: 'INR' }}</p>
+            </div>
+          </div>
+  
+          <div class="bottom">
+            <div class="place">
+              <p>{{ flight.source }}</p>
+              <p> - </p>
+              <p>{{ flight.destination }}</p>
+            </div>
+  
+            <div class="seats">
+              <p><strong>Available Seats:</strong> {{ flight.availableSeats }}</p>
+            </div>
+          </div>
+  
+          <div class="book-group">
+            <button class="book-btn" (click)="bookFlight(flight)">Book Ticket</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
